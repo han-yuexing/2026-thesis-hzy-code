@@ -1,0 +1,9 @@
+__include__: [
+  '../dataset/coco_detection_6.yml',
+  '../runtime.yml',
+  './include/dataloader.yml',
+  './include/optimizer.yml',
+  './include/rtdetr2_r50vd.yml',
+]
+
+output_dir: ./output/rtdetr2_r50vd_6x_coco_tomato

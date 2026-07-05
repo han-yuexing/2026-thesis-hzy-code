@@ -1,0 +1,35 @@
+task: detection
+
+num_classes: 6
+remap_mscoco_category: False
+
+train_dataloader: 
+  type: DataLoader
+  dataset: 
+    type: CocoDetection
+    img_folder: ./Dataset/tomato_804/JPEGImages
+    ann_file: ./Dataset/tomato_804/train.json
+    transforms:
+      type: Compose
+      ops: ~
+  shuffle: True
+  batch_size: 2
+  num_workers: 4
+  drop_last: True 
+
+
+val_dataloader:
+  type: DataLoader
+  dataset: 
+    type: CocoDetection
+    img_folder: ./Dataset/tomato_804/JPEGImages
+    # ann_file: ./Dataset/tomato_804/val.json
+    ann_file: ./Dataset/tomato_804/val_f.json
+    transforms:
+      type: Compose
+      ops: ~ 
+
+  shuffle: False
+  batch_size: 1
+  num_workers: 4
+  drop_last: False
